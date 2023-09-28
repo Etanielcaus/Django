@@ -14,34 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.http import HttpResponse
-from django.urls import path
-# HTTP Request <-> HTTP Response
-# MVT (MVC)
-
-
-# Essa é uma função de visualização simples que imprime uma mensagem no console
-def my_view(request):
-    print('posso fazer outras coisas')
-    return HttpResponse('Uma mensagem para alguém especial')
-
-
-# Função de visualização para a página inicial
-def home(request):
-    print('home')
-    return HttpResponse('home1')
-
-
-# Função de visualização para a página de blog
-def blog(request):
-    print('blog')
-    return HttpResponse('blog')
+from django.urls import path, include
 
 
 # Lista de URLs do aplicativo
 urlpatterns = [
-    path('', home),  # URL raiz para a página inicial
-    path('blog/', blog),  # URL para a página do blog
+    path('', include('home.urls')),  # URL raiz para a página inicial
+    path('blog/', include('blog.urls')),  # URL para a página do blog
     path('admin/', admin.site.urls),  # URL para o painel de administração
-    path('blog/', my_view),  # URL para a função de visualização 'my_view'
 ]

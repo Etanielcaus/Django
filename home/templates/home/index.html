@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    {% block headScripts%}{% endblock headScripts %}
+    <link rel="shortcut icon" href="{% static 'svg/logo.svg' %}" type="image/x-icon">
+    {% comment %} update css_version upon changes in css files {% endcomment %}
+    {% with css_version="2.1" %}
+        {% block stylesheet %}{% endblock stylesheet%}
+    {% endwith %}
+</head>
+<body>
+    {% block body %}
+    <b> HOME </b>
+    
+    
+    {% endblock body %}
+    {% comment %} update js_version upon changes in js files {% endcomment %}
+    {% with js_version="2.1" %}
+        {% block scripts %}{% endblock scripts %}
+    {% endwith %}
+</body>
+</html>

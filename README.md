@@ -31,3 +31,16 @@ python manage.py runserver
 
 ### Minha primeira URL
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status">🔗 HTTP Codes</a>
+<bold> views </bold>e <bold>response</bold> 
+
+#### views
+Em um aplicativo da web Django, as views são funções ou classes que controlam o que acontece quando um usuário acessa uma URL específica. As views processam as solicitações HTTP dos usuários e retornam uma resposta apropriada. Elas são o ponto central para a lógica de negócios de um aplicativo web Django.
+
+#### response
+No contexto das views do Django, uma resposta (response) é o que a view retorna para o navegador do usuário após processar a solicitação HTTP. O objetivo da resposta é enviar dados de volta ao cliente, que podem ser uma página HTML renderizada, dados JSON, uma imagem, um arquivo para download ou até mesmo um redirecionamento para outra URL.
+
+### app
+Criar app:
+```bash
+python manage.py startapp home
+```
