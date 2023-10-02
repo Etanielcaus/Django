@@ -5,7 +5,7 @@ def home(request):
     print('home')
 
     context = {
-        'text': 'Estamos na Home'
+        # 'text': 'Estamos na Home'
     }
 
     return render(

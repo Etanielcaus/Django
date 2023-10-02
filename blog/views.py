@@ -1,12 +1,15 @@
 # from django.http import HttpResponse
 
 from django.shortcuts import render
+from blog.data import posts
 
 
 def blog(request):
+
     context = {
         'text': 'Página do Blog',
-        'title': 'Estamos no Blog - '
+        'title': 'Estamos no Blog - ',
+        'posts': posts
     }
     return render(
         request,

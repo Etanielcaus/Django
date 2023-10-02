@@ -24,3 +24,21 @@ nav {
     background-color: whitesmoke; 
     font-size: 28px;
 }
+
+.content {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.post {
+  background: #f1f1f1;
+  padding: 1.5rem;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 20%);
+}
+
+@media (min-width: 600px) {
+  .content {
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  }
+}
