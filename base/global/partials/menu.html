@@ -1,13 +1,13 @@
-<nav>
-<ul class="nav justify-content-center ">
-    <li class="nav-item">
-        <a class="nav-link" href="{% url "home:home" %}" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url "blog:home" %}">Blog</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url "blog:exemplo" %}">Exemplo</a>
-    </li>
-</ul>
+<nav class="menu__menu">
+    <ul class="menu__links">
+        <li>
+            <a href="{% url "home:home" %}" aria-current="page">Home</a>
+        </li>
+        <li>
+            <a href="{% url "blog:home" %}">Blog</a>
+        </li>
+        <li>
+            <a href="{% url "blog:exemplo" %}">Exemplo</a>
+        </li>
+    </ul>
 </nav>
