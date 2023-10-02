@@ -1,7 +1,9 @@
 # from django.http import HttpResponse
 
 from django.shortcuts import render
+from django.http import HttpRequest
 from blog.data import posts
+from typing import Any
 
 
 def blog(request):
@@ -18,20 +20,24 @@ def blog(request):
     )
 
 
-def post(request, post_id):
-    found_post = None
+def post(request: HttpRequest, post_id: int):
+    found_post: dict[str, Any] | None = None
 
     for post in posts:
         if post['id'] == post_id:
             found_post = post
             break
 
+    if found_post is None:
+        raise Exception('Post não encontrado')
+
     context = {
         # 'text': 'Página do Blog',
-        'title': 'POST - ',
+        'title': found_post['title'] + ' - ',
         # 'posts': posts
         'post': found_post
     }
+
     return render(
         request,
         'blog/post.html',
