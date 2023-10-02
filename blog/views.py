@@ -18,6 +18,21 @@ def blog(request):
     )
 
 
+def post(request, id):
+    print('post', id)
+
+    context = {
+        # 'text': 'Página do Blog',
+        'title': 'POST - ',
+        'posts': posts
+    }
+    return render(
+        request,
+        'blog/index.html',
+        context
+    )
+
+
 def exemplo(request):
     context = {
         'text': 'Estamos no Exemplo',
